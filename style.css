@@ -1,0 +1,150 @@
+  * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #2c3e50;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Layout Atas: Logo & Judul */
+        .header-zone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 700px;
+            max-height: 400px;
+            object-fit: contain;
+            
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1b4d3e; /* Hijau islami yang elegan */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            border-bottom: 4px solid #1b4d3e;
+            padding-bottom: 10px;
+            min-width: 300px;
+        }
+
+        /* Layout Tengah: Timer & Tombol */
+        .main-zone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 2;
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        /* Display Angka Timer */
+        .timer-display {
+            font-size: 25vw; /* Sangat responsif untuk proyektor/layar besar */
+            font-weight: 800;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1;
+            margin-bottom: 40px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            color: #27ae60; /* Warna hijau default sebelum 6 menit */
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Kondisi Overtime (>= 6 menit) */
+        .timer-display.overtime {
+            color: #c0392b; /* Berubah menjadi merah tegas */
+            text-shadow: 0 0 20px rgba(192, 41, 43, 0.3);
+            animation: pulse 1s infinite alternate;
+        }
+
+        /* Container Tombol */
+        .control-buttons {
+            display: flex;
+            gap: 25px;
+        }
+
+        .btn {
+            font-size: 1.6rem;
+            font-weight: 700;
+            padding: 15px 45px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn-start {
+            background-color: #27ae60;
+            color: #ffffff;
+        }
+
+        .btn-start:hover {
+            background-color: #219653;
+            box-shadow: 0 6px 12px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-pause {
+            background-color: #f39c12;
+            color: #ffffff;
+        }
+
+        .btn-pause:hover {
+            background-color: #d68910;
+            box-shadow: 0 6px 12px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-reset {
+            background-color: #7f8c8d;
+            color: #ffffff;
+        }
+
+        .btn-reset:hover {
+            background-color: #616a6b;
+            box-shadow: 0 6px 12px rgba(127, 140, 141, 0.3);
+        }
+
+        /* Animasi berkedip pelan saat merah (overtime) */
+        @keyframes pulse {
+            from { opacity: 1; }
+            to { opacity: 0.8; }
+        }
+
+        /* Ruang kosong di bawah untuk menyeimbangkan layout */
+        .footer-spacer {
+            flex-grow: 1;
+        }
+        
+        @media (max-width: 600px) {
+            .title {
+                font-size: 1.8rem;
+            }
+            .btn {
+                font-size: 1.2rem;
+                padding: 12px 30px;
+            }
+        }
