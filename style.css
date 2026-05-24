@@ -27,10 +27,11 @@
         }
 
         .logo {
-            max-width: 700px;
-            max-height: 400px;
-            object-fit: contain;
-            
+            width: 100%;             /* Mengikuti lebar container */
+            max-width: 800px;        /* Batas lebar maksimal di layar besar agar tidak kebesaran */
+            height: auto;            /* Tinggi otomatis proporsional agar tidak gepeng/distorsi */
+            object-fit: contain;     /* Memastikan gambar termuat sempurna dalam bingkai */
+            margin-bottom: 15px;
         }
 
         .title {
@@ -147,4 +148,9 @@
                 font-size: 1.2rem;
                 padding: 12px 30px;
             }
+            .logo {
+                max-width: 400px;    /* Logo otomatis mengecil di HP/Tablet */
+            }
         }
+
+        
