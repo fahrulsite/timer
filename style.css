@@ -60,7 +60,7 @@
         .timer-display {
             font-size: 25vw; /* Sangat responsif untuk proyektor/layar besar */
             font-weight: 800;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: "Montserrat", sans-serif;
             line-height: 1;
             margin-bottom: 40px;
             transition: color 0.3s ease, text-shadow 0.3s ease;
